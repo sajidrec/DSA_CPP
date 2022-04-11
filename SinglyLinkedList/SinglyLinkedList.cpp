@@ -2,6 +2,11 @@
 
 using namespace std;
 
+void indexOutOfBounds()
+{
+    throw invalid_argument("Wrong index number provided.");
+}
+
 template <class T>
 class Node
 {
@@ -71,7 +76,7 @@ public:
     {
         if (index < 0 || index >= this->size())
         {
-            throw invalid_argument("invalid index number provided.");
+            indexOutOfBounds();
         }
         if (index == 0)
         {
@@ -102,7 +107,7 @@ public:
     {
         if (index < 0 || index >= this->size())
         {
-            throw invalid_argument("invalid index number");
+            indexOutOfBounds();
         }
         if (index == 0)
         {
@@ -149,7 +154,7 @@ public:
     {
         if (index >= this->size() || index < 0)
         {
-            throw invalid_argument("index number trying to access is invalid.");
+            indexOutOfBounds();
         }
         Node<T> *data = head;
         for (int i = 0; i < index; i++)
@@ -165,7 +170,7 @@ public:
     {
         if (index >= this->size() || index < 0)
         {
-            throw invalid_argument("index number trying to access is invalid.");
+            indexOutOfBounds();
         }
         Node<T> *data = head;
         for (int i = 0; i < index; i++)
