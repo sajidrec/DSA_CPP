@@ -179,6 +179,13 @@ public:
         }
         return data;
     }
+
+    // update value
+    void update(int index, T data)
+    {
+        Node<T> *temp = this->getNode(index);
+        temp->data = data;
+    }
 };
 
 int main()
@@ -186,6 +193,7 @@ int main()
     SinglyLinkedList<string> str;
     str.append("Hello");
     str.append("world");
+    str.update(0, "Hi");
     str.append("war");
     str.append("will");
     str.append("begain");
