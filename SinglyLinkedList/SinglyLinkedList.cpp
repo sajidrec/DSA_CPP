@@ -59,6 +59,7 @@ public:
         if (head == NULL)
         {
             this->append(data);
+            return;
         }
         else
         {
@@ -81,10 +82,12 @@ public:
         if (index == 0)
         {
             this->prepend(data);
+            return;
         }
         else if (index == this->size() - 1)
         {
             this->append(data);
+            return;
         }
         else
         {
@@ -202,6 +205,8 @@ int main()
     str.insert("2", 3);
 
     str.remove(3);
+
+    // cout << str.size() << endl;
 
     for (int i = 0; i < str.size(); i++)
     {
