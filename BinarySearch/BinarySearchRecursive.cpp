@@ -31,8 +31,8 @@ lld findElement(vector<lld> &vec, lld left, lld right, lld element)
 int main()
 {
     vector<lld> vec = {2, 4, 5, 77, 754, 945, 994};
-
-    cout << findElement(vec, 0, vec.size(), 2) << endl;
+    // need to pass size-1 for zero based indexing     
+    cout << findElement(vec, 0, vec.size()-1, 2) << endl;
 
     return 0;
 }
